@@ -11,8 +11,8 @@ export default function DayCard(props) {
         for (let key in storeHours){
             hours.push(
                 <Row className='hourRow'>
-                    <Col xs={5} className='day'>{key}</Col>
-                    <Col xs={7} className='hours'>{storeHours[key]}</Col>
+                    <Col xs={6} className='day'>{key}</Col>
+                    <Col xs={6} className='hours'>{storeHours[key]}</Col>
                 </Row>
             )
         }

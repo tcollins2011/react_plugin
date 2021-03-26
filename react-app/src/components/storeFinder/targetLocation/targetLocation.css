@@ -159,13 +159,19 @@
   margin: auto;
   font-family: "Montserrat", sans-serif;
   font-style: italic;
+  text-align: justify;
   font-size: 17px;
   font-weight: 400;
 }
 .phoneLink {
   color: inherit;
 }
-
+.phoneLink:hover {
+  color: #d9ab73;
+}
 .hoverAddress {
   cursor: pointer;
+}
+.hoverAddress:hover {
+  color: #d9ab73;
 }

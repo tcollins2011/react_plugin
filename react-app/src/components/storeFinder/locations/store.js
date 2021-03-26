@@ -86,7 +86,7 @@ function Store(props){
                                 <line strokeWidth='0.05'   stroke="#d9ab73" fill="none" x1='50' y1='15' x2='50' y2='85'></line>
                             </svg>
                             <Col id='logoColumn' >
-                            <img src={data.img} alt=''></img>
+                            <img src={`${process.env.PUBLIC_URL}${data.img}`} alt=''></img>
                             <button>Shop</button>
                             </Col>  
                             <Col> 
@@ -130,7 +130,7 @@ function Store(props){
                                     <line strokeWidth='0.05'   stroke="#d9ab73" fill="none" x1='50' y1='15' x2='50' y2='85'></line>
                                 </svg>
                                 <Col id='logoColumn' >
-                                <img src={data.img} alt=''></img>
+                                <img src={`${process.env.PUBLIC_URL}${data.img}`} alt=''></img>
                                 <button>Shop</button>
                                 </Col>
                                 <Col>

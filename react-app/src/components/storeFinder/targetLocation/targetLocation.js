@@ -62,7 +62,7 @@ function chooseMenu(id){
             <Container className='containerPadding stickyContainer'>
                 <Row>
                     <div className='backDiv'><button onClick={()=>goBack()} className='backButton'><BiLeftArrow size={28}/></button></div>
-                    <img className='logo' src={filteredStore[0].logoPinch} alt=''></img>
+                    <img className='logo' src={`${process.env.PUBLIC_URL}${filteredStore[0].logoPinch}`} alt=''></img>
                 </Row>
                 <Row>
                    <div className='buttonContainer'>{determineButtonNumber()}</div>
@@ -70,7 +70,7 @@ function chooseMenu(id){
             </Container>
             <Container className='containerPadding'>
                 <div className='storeLocation'>
-                    <img className='storeImage' src={filteredStore[0].exteriorStore} alt=''></img>
+                    <img className='storeImage' src={`${process.env.PUBLIC_URL}${filteredStore[0].exteriorStore}`} alt=''></img>
                 </div>
                 <div className='phoneAndAddress'>
                     <div className='innerPhoneAndAddress'>
@@ -87,7 +87,7 @@ function chooseMenu(id){
                     <DayCard store={filteredStore}></DayCard>
                 </div>
                 <div>
-                    <img className='storeImage' src={filteredStore[0].interiorStore}  alt=''></img>
+                    <img className='storeImage' src={`${process.env.PUBLIC_URL}${filteredStore[0].interiorStore}`}  alt=''></img>
                 </div>
                 <div className='storeDescription'>
                     <h4> Lorem ipsum <br></br> dolor sit amet</h4>

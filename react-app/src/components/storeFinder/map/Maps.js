@@ -32,8 +32,8 @@ export default function Maps(props) {
            <InfoWindow onCloseClick={() => setSelectedStore(null)}
            >
              <div className='infoWindow'>
-               <img className='storeImage' src={selectedStore.exteriorStore} alt=''></img>
-               <img className='storeLogo' src={selectedStore.logoPinch} alt=''></img>
+               <img className='storeImage' src={`${process.env.PUBLIC_URL}${selectedStore.exteriorStore}`} alt=''></img>
+               <img className='storeLogo' src={`${process.env.PUBLIC_URL}${selectedStore.logoPinch}`} alt=''></img>
                <h4 id='address'>{selectedStore.address1}</h4>
                <h4 id='address'>{selectedStore.address2}</h4>
                <h3 className='phone'>{selectedStore.phone}</h3>
