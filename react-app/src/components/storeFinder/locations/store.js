@@ -24,15 +24,19 @@ function Store(props){
         if (!storeType.Rec && storeType.Med){
             return('Medical')
         }
+        if (!storeType.Rec && !storeType.Med && storeType.Consumption){
+            return('Consumption Lounge')
+        }
         else{
             return
         }
     }
 
-    function determineEnd(storeArray){
-        if(storeArray.name === storeJson[storeJson.length-1].name){
+    function determineEnd(storeArray,target){
+        
+        if(storeArray[storeArray.length -1].name === target.name){
             return
-        }   
+        } 
         else{
             return(
                 <div id='svgSeparator'>
@@ -102,7 +106,7 @@ function Store(props){
                     </Container>
                 </div>
             </div>
-            <div>{determineEnd(data)}</div>
+            <div>{determineEnd(organizedStore,data)}</div>
         </div>
         
     ))
@@ -145,7 +149,7 @@ function Store(props){
                         </Container>
                     </div>
                 </div>
-                <div>{determineEnd(data)}</div>
+                <div>{determineEnd(storeJson,data)}</div>
             </div>   
         ))
     }

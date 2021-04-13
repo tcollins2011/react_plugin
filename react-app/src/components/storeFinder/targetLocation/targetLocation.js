@@ -41,9 +41,16 @@ function determineButtonNumber(){
             </div> 
         )
     }
+    if (!filteredStore[0].type.Rec && !filteredStore[0].type.Med && filteredStore[0].type.Consumption){
+        return(
+            <div>
+                <button onClick={()=>{consumptionMenu()}}className='tri button'>VISIT US</button>
+                <button onClick={()=>{getDirections()}} className='tri button'>DIRECTIONS</button>    
+                <button onClick={()=>{shopCBD()}} className='tri button'>SHOP CBD</button>      
+            </div> 
+        )
+    }
     else{
-        
-    
     }
 }
 function goBack(){
@@ -56,7 +63,14 @@ function chooseMenu(id){
         behavior: "smooth"
       });
 }
-
+const consumptionMenu = ()=>{
+    window.open(
+        "https://thecoffeejointco.com/",);
+}
+const shopCBD = ()=>{
+    window.open(
+        "https://thecoffeejointcbd.com/",);
+}
     return(
         <div>
             <Container className='containerPadding stickyContainer'>
@@ -90,7 +104,7 @@ function chooseMenu(id){
                     <img className='storeImage' src={`${process.env.PUBLIC_URL}${filteredStore[0].interiorStore}`}  alt=''></img>
                 </div>
                 <div className='storeDescription'>
-                    <h4> Lorem ipsum <br></br> dolor sit amet</h4>
+                    <h4> About Us</h4>
                     <p>{filteredStore[0].storeDescription}</p>
                 </div>
             </Container>

@@ -115,7 +115,7 @@ const storeJson = [
             saturday:'8am - 9:45pm',
             sunday:'8am - 9:45pm'
         },
-        storeDescription:"Waiting for Offical Text",
+        storeDescription:"Located in Old Town Arvada, our brightly colorful exterior will direct you to cannabis heaven. Our store is stocked with a variety of cannabis products and smoking accessories in every category. All our products are tested and approved by our staff. We carry everything from $18 wax to $70 cannagars; we have something for everyone, from the stoner who just needs a joint to the connoisseur smoker looking for the top of the line brands and everything in between! ",
     },
     {
         id: '17',
@@ -161,20 +161,51 @@ const storeJson = [
         phone:'(989) 402-9011',
         phoneLink:'tel:+1-989-402-9011',
         type:{
-            Rec:'',
+            Rec:'3031',
             Med:'2600'
         },
         hours:{
-            monday:'11am - 6pm',
+            monday:'closed',
             tuesday:'closed',
             wednesday:'11am - 6pm',
             thursday: '11am - 6pm',
-            friday:'11am - 6pm',
-            saturday:'11am - 6pm',
-            sunday:'closed'
+            friday:'1pm - 8pm',
+            saturday:'1pm - 8pm',
+            sunday:'11am - 6pm'
         },
-        storeDescription:"Waiting for Official Text",
+        storeDescription:"CannaBay is Bay City, Michigan’s first licensed provisioning center. With a relaxed customer-based environment, CannaBay’s cannabis shopping experience is specifically tailored to help treat every customer to the best of our abilities. We pride ourselves on providing 1-on-1 service to each customer that walks through our doors. Each product on our shelves is carefully chosen to make sure we have only top quality state tested products.  At CannaBay, our passionate budtenders strive to provide you with a satisfied experience and a welcoming atmosphere every single time — by the bay.",
     },
+    {
+        id: '1',
+        img: '/images/logo/coffeeJointLogo.png',
+        logoPinch:'/images/logoPinch/coffeeJointPinch.png',
+        exteriorStore:'/images/storeExterior/1136yumaOutdoor.jpg',
+        interiorStore:'/images/storeInterior/TCJinside.jpg',
+        name: 'The Coffee Joint',
+        address1: '1130 Yuma Ct',
+        address2:'Denver CO, 80204',
+        escapedUrlAddress:'1130+Yuma+Ct%2C+Denver%2C+CO+80204',
+        lat: 39.734329,
+        lng: -105.014459,
+        phone:'(720) 583-4657',
+        phoneLink:'tel:+1-720-583-4657',
+        type:{
+            Rec:'',
+            Med:'',
+            Consumption:'1'
+        },
+        hours:{
+            monday:'8am - 9:45pm',
+            tuesday:'8am - 9:45pm',
+            wednesday:'8am - 9:45pm',
+            thursday: '8am - 9:45pm',
+            friday:'8am - 9:45pm',
+            saturday:'8am - 9:45pm',
+            sunday:'8am - 9:45pm'
+        },
+        storeDescription:"A pioneer in Colorado’s cannabis industry, The Coffee Joint opened in 2018 to acclaim from local and national media. When in operation, the lounge allows e-nail dabbing, edible consumption and vaporizing of flower/concentrates to take place throughout the establishment. From jam sessions, intimate concerts, painting, cannabis vendor showcases, table games, book readings; The Coffee Joint is a hot spot for local wellness, education, and entertainment events. The Coffee Joint’s Consumption Lounge is currently closed to ensure the wellbeing of staff and retail patrons. Smoking accessories and snacks are available for purchase in-store. CBD products can be purchased at our brick-and-mortar and are also available for purchase online! ",
+    },
+ 
 ]
 
 
