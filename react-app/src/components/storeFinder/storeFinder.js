@@ -8,27 +8,34 @@ import Maps from './map/Maps'
 import  TargetLocation from './targetLocation/targetLocation'
 import storeJson from './locations/storeJson'
 
+
 function StoreFinder(props) {
 
+    // Id state 
     const [id, setId] = useState({
         id:''
     })
 
+    // Store distance state
     const [storeDistance,setStoreDistance] = useState({
         stores: [],
         zoom:null,
         center:null
     })
 
+    // Default Map API information state
     const [mapParams,setMapParams] = useState({
         zoom:'5',
         center:{lat: 39.8283, lng: -98.5795}
     })
 
+        // Has a specific store been selected state
     const [menuChosen,setMenuChosen] = useState({
         menu:''
     })
 
+    // This triggers whenever the id or storeDistance state changes
+    // This will then update the map zoom and centering 
     useEffect(() => {
         if(id.id){
             const filteredStores = storeJson.filter(store => store.id === id.id)
@@ -43,12 +50,14 @@ function StoreFinder(props) {
         
     },[id, storeDistance] )
 
+    // Whenvever a menu is chosen this will update the storeId state
     useEffect(() => {
         if(menuChosen.menu){
             props.callBack({storeId:menuChosen.menu})
         }
     },[menuChosen])
   
+    // If there is no id return the search component, the store component in locations, and a map component
     if(!id.id){
         return(
             <Container fluid>
@@ -77,6 +86,8 @@ function StoreFinder(props) {
             </Container>
         )
     }
+    // If there is an Id return the Target Location component and a map component
+    // Also returns a search component on mobile only
     if(id){
         return(
             <Container fluid>

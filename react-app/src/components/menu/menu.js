@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 
 function Menu(props){
 
+  // This function will return an embeded i heart jane menu with the matching store ID
   const storeId = props.Id
   useEffect(() => {
 

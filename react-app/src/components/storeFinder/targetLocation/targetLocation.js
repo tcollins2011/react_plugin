@@ -7,14 +7,19 @@ import {BiLeftArrow} from 'react-icons/bi'
 import {FaPhoneAlt, FaMapMarkerAlt} from 'react-icons/fa'
 import DayCard from './dayCard/dayCard'
 
+// Component that runs when a store has been selected
+
+// Selects the target store's information from the json file
 function TargetLocation(props){
     const filteredStore = storeJson.filter(store => store.id === props.id)
 
+// function to return google map directions to the store
 function getDirections(){
-
     window.open(`https://www.google.com/maps/dir/?api=1&destination=${filteredStore[0].escapedUrlAddress}`, "_blank")
 }
 
+// function to determine how many buttons to draw on the top of the page
+// Based on store type and always includes directions
 function determineButtonNumber(){
     if (filteredStore[0].type.Rec && filteredStore[0].type.Med){
         return(
@@ -53,9 +58,11 @@ function determineButtonNumber(){
     else{
     }
 }
+// Resets store id in previous state to false
 function goBack(){
     props.callBack({id:''})
 }
+// sends back state information to app.js to open the menu component
 function chooseMenu(id){
     props.menuChosen({menu:id})
     window.scrollTo({
@@ -63,6 +70,7 @@ function chooseMenu(id){
         behavior: "smooth"
       });
 }
+// Coffee Joint only specific external window opening
 const consumptionMenu = ()=>{
     window.open(
         "https://thecoffeejointco.com/",);
@@ -71,6 +79,8 @@ const shopCBD = ()=>{
     window.open(
         "https://thecoffeejointcbd.com/",);
 }
+
+// Returns standardized jsx for the selected store
     return(
         <div>
             <Container className='containerPadding stickyContainer'>

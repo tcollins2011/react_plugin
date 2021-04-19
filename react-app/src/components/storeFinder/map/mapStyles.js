@@ -1,3 +1,4 @@
+// Styling information for the google map in JSON form as required
 export default   [
     {
         "featureType": "landscape",

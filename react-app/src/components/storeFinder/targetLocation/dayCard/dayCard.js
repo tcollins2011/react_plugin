@@ -7,6 +7,7 @@ export default function DayCard(props) {
     const store = props.store[0].hours
     const hours = []
 
+    // Functions used to make the hours component for targeted locations.
     const makeHours = (storeHours) => {
         for (let key in storeHours){
             hours.push(

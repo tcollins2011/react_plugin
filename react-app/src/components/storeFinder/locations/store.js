@@ -6,6 +6,7 @@ import storeJson from './storeJson.js'
 
 function Store(props){
 
+    // Passes the id up a state level
     function chooseStore(id) {
         window.scrollTo({
             top: 0,
@@ -13,6 +14,7 @@ function Store(props){
           });
         props.callBack({id:id})
     }
+    // Determines what types of store each dispensary is
     function determineStoreType(storeType){
 
         if (storeType.Rec && storeType.Med){
@@ -32,6 +34,8 @@ function Store(props){
         }
     }
 
+    // function to determine if a svg box should be drawn below a store entry
+    // Does not draw one after the final store 
     function determineEnd(storeArray,target){
         
         if(storeArray[storeArray.length -1].name === target.name){
@@ -52,6 +56,7 @@ function Store(props){
         }
     }
 
+    // This function sorts an array containing all the stores so that they can be arranged by distance
     function organizeByDistance(templateArray,dirtyArray){
         const organizedDistanceArray = []
         for(let i = 0; i < templateArray.length; i++){
@@ -66,9 +71,10 @@ function Store(props){
         return organizedDistanceArray
     }
 
-
-    if(props.organizedCards.length>1){
+// This will cause the stores to be organized by distance if the user location is known
+    if(props.organizedCards.length>1){  
       const organizedStore = organizeByDistance(props.organizedCards,storeJson)
+      // make a component for each store in store.json after it has been organized
        return organizedStore.map(data => (
         <div key ={data.id} >   
             <div id='buttonWrapper' onClick={() => chooseStore(data.id)}>
@@ -112,7 +118,9 @@ function Store(props){
     ))
     }
     
+    // This will return the stores in a list as determined by their order in store.json
     else{
+        // make a component for each store in store.json
         return storeJson.map(data => (
             <div key ={data.id} >   
                 <div id='buttonWrapper' onClick={() => chooseStore(data.id)}>
@@ -153,8 +161,6 @@ function Store(props){
             </div>   
         ))
     }
-   
-
 }
 
 export default Store;
