@@ -2,30 +2,37 @@ import React, {useState} from "react";
 import "./App.css";
 import StoreFinder from './components/storeFinder/storeFinder'
 import Menu from './components/menu/menu'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
  
+
   // Creates an overarching empty state that looks for a store ID
   const [storeSelected, setStoreSelected] = useState({
-    storeId: 0,
+    storeId: '',
 
 });
 
-// If there is a store ID return the Menu Component
-  if (storeSelected.storeId){
-    return (
-      <div className='holder'>
-        <Menu Id={storeSelected.storeId} callBack={() => setStoreSelected}></Menu>  
-      </div>
-    );
-  }
-
   // If there is no store ID return the storeFinder component 
   return (
-    <div className='holder'>
-      <StoreFinder callBack={setStoreSelected}></StoreFinder>
+    <Router>
+      <div className='holder'>
+      <Switch>
+        <Route exact path="/menu/:id" >
+          <Menu Id={storeSelected.storeId} callBack={() => setStoreSelected}></Menu>  
+        </Route>
+        <Route path='/'>
+          <StoreFinder callBack={setStoreSelected}></StoreFinder>
+        </Route>
+      </Switch>
     </div>
+  </Router>
   );
+
 }
 
 

@@ -6,6 +6,7 @@ import storeJson from '../locations/storeJson.js'
 import {BiLeftArrow} from 'react-icons/bi'
 import {FaPhoneAlt, FaMapMarkerAlt} from 'react-icons/fa'
 import DayCard from './dayCard/dayCard'
+import {Link} from 'react-router-dom'
 
 // Component that runs when a store has been selected
 
@@ -24,8 +25,12 @@ function determineButtonNumber(){
     if (filteredStore[0].type.Rec && filteredStore[0].type.Med){
         return(
             <div>
-                <button onClick={()=>{chooseMenu(filteredStore[0].type.Rec)}}className='tri button'>SHOP REC</button>
-                <button onClick={()=>{chooseMenu(filteredStore[0].type.Med)}}className='tri button'>SHOP MED</button>
+                <Link to={`/menu/${filteredStore[0].type.Rec}`}>
+                    <button onClick={()=>{chooseMenu(filteredStore[0].type.Rec)}}className='tri button'>SHOP REC</button>
+                </Link>
+                <Link to={`/menu/${filteredStore[0].type.Med}`}>
+                    <button onClick={()=>{chooseMenu(filteredStore[0].type.Med)}}className='tri button'>SHOP MED</button>
+                </Link>
                 <button onClick={()=>{getDirections()}}className='tri button'>DIRECTIONS </button>
             </div> 
         )
@@ -33,7 +38,9 @@ function determineButtonNumber(){
     if (filteredStore[0].type.Rec && !filteredStore[0].type.Med){
         return(
             <div>
+                <Link to={`/menu/${filteredStore[0].type.Rec}`}>
                 <button onClick={()=>{chooseMenu(filteredStore[0].type.Rec)}} className='duo button'>SHOP REC</button>
+                </Link>
                 <button onClick={()=>{getDirections()}} className='duo button'>DIRECTIONS</button>       
             </div> 
         )
@@ -41,7 +48,9 @@ function determineButtonNumber(){
     if (!filteredStore[0].type.Rec && filteredStore[0].type.Med){
         return(
             <div>
-                <button onClick={()=>{chooseMenu(filteredStore[0].type.Med)}}className='duo button'>SHOP MED</button>
+                <Link to={`/menu/${filteredStore[0].type.Med}`}>
+                    <button onClick={()=>{chooseMenu(filteredStore[0].type.Med)}}className='duo button'>SHOP MED</button>
+                </Link>
                 <button onClick={()=>{getDirections()}} className='duo button'>DIRECTIONS</button>         
             </div> 
         )

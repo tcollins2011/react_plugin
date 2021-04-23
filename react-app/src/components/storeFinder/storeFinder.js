@@ -11,6 +11,11 @@ import storeJson from './locations/storeJson'
 
 function StoreFinder(props) {
 
+    const element = document.getElementById('menu-div')
+    if (element){
+        element.parentNode.removeChild(element);
+    }
+
     // Id state 
     const [id, setId] = useState({
         id:''
