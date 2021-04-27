@@ -19,11 +19,14 @@ function App() {
 
   // If there is no store ID return the storeFinder component 
   return (
-    <Router>
+    <Router basename="/storeFinder">
       <div className='holder'>
       <Switch>
         <Route exact path="/menu/:id" >
           <Menu Id={storeSelected.storeId} callBack={() => setStoreSelected}></Menu>  
+        </Route>
+        <Route exact path='/store/:store'>
+          <StoreFinder callBack={setStoreSelected}></StoreFinder>
         </Route>
         <Route path='/'>
           <StoreFinder callBack={setStoreSelected}></StoreFinder>

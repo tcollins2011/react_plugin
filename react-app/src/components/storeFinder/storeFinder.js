@@ -7,10 +7,11 @@ import Search from './search/search'
 import Maps from './map/Maps'
 import  TargetLocation from './targetLocation/targetLocation'
 import storeJson from './locations/storeJson'
+import {useParams} from 'react-router-dom'
 
 
 function StoreFinder(props) {
-
+    // Removes a store menu if its there
     const element = document.getElementById('menu-div')
     if (element){
         element.parentNode.removeChild(element);
@@ -33,6 +34,19 @@ function StoreFinder(props) {
         zoom:'5',
         center:{lat: 39.8283, lng: -98.5795}
     })
+
+    // Checks to see if a store should be pre-selected
+    const { store } = useParams()
+    useEffect(() => {
+        if(store){
+            const found = storeJson.find( ({ id }) => id === store)
+            if (found) {
+                setId({id:store})
+            }
+            return 
+        }
+    },[store])
+
 
         // Has a specific store been selected state
     const [menuChosen,setMenuChosen] = useState({
