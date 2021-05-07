@@ -143,7 +143,7 @@ function Store(props){
                                 </svg>
                                 <Col id='logoColumn' >
                                 <img src={`${process.env.PUBLIC_URL}${data.img}`} alt=''></img>
-                                <button>Shop</button>
+                                <button>{data.shop}</button>
                                 </Col>
                                 <Col>
                                     <div id='storeInfo'>
